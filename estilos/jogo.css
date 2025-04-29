@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+*{
+    margin: 0px;
+    padding: opx;
+}
+
+
+main{
+    padding: 10px;
+}
+
+header{
+    text-align: center;
+}
+header h1{
+    padding: 10px;
+    margin-bottom: 50px;
+}
+div#voltar{
+    position: absolute;
+    display: block;
+    top: 1px;
+}
+main div{
+    position: absolute;
+    display: inline-block;
+    padding: 10px;
+}
