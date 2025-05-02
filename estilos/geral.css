@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+:root{
+    /*Paleta de cores*/
+    --cor1:#C0544C;
+    --cor2:#dcda6f;
+    --cor3:#463BC0;
+    --cor4:#48456B;
+    --cor5:#332626;
+}
+
+*{
+    margin: 0px;
+    padding: opx;
+}
+
+div#voltar{
+    position: absolute;
+    display: block;
+    top: 1px;
+}
