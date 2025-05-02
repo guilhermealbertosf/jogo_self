@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+body{
+    background-color: var(--cor2);
+}
+
+h1{
+    text-align: center;
+    padding: 20px;    
+}
+section{
+    margin: auto;
+    background-color: white;
+    width: 90%;
+
+}

@@ -1,3 +1,4 @@
+
 function Monstro(nome='' , elemento='', vida=1, dano=0, velocidade=1, src='../midia/IMG-20250424-WA0137-400px.jpg'){
     
     let vetor = {1:nome, 2:elemento, 3:vida, 4:dano, 5:velocidade}
@@ -25,8 +26,8 @@ function Monstro(nome='' , elemento='', vida=1, dano=0, velocidade=1, src='../mi
         div.appendChild(p)
     }
     section.appendChild(document.createElement('hr'))
-
 }
 
 
-//Monstro('Croconot', 'Fogo', 12, 5, 5)
+
+
