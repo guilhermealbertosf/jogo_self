@@ -1,18 +1,11 @@
-let monstro1 = {
-    nome:'Serpendragon',
-    elemento:'Natureza',
-    vida:4000,
-    dano:1200,
-    energia:20,
-    src:'../midia/serpendragon.jpg'}
 
-let monstro2 = {
-    nome:'Colossus', 
-    elemento:'água', 
-    vida:7800, 
-    dano:1000, 
-    energia:20, 
-    src:'../midia/colossus.jpg'}
+
+
+
+function selecionar(){
+    alert('selecionado')
+}
+
 
 function Batalha(){
 
@@ -46,3 +39,86 @@ function Batalha(){
     energia2.innerText = `Energia: ${monstro2.energia}`
     imagem2.setAttribute('src', `${monstro2.src}`)
 }
+
+let monstro1 = {
+    nome:'Serpendragon',elemento:'Natureza',vida:4000,dano:1200,energia:20,src:'../midia/serpendragon.jpg'}
+
+let monstro2 = {
+    nome:'Colossus', elemento:'água', vida:7800,dano:1000, energia:20, src:'../midia/colossus.jpg'}
+
+let c1 = 1
+let c2 = 1
+let inicio = 1
+let fim = 3
+let nome = [
+    '',
+    'Serpendragon',
+    'Croconot',
+    'Colossus',
+]
+let elemento = [
+    '',
+    'Natureza',
+    'Fogo',
+    'Água',
+]
+let vida = [
+    0,
+    4000,
+    5000,
+    7800,
+]
+let dano = [
+    0,
+    1200,
+    2000,
+    1000,
+]  
+let energia = [
+    0,
+    20,
+    20,
+    20,
+]
+let src = [
+    '',
+    '../midia/serpendragon.jpg',
+    '../midia/croconot.jpg',
+    '../midia/colossus.jpg',
+]
+function TrocarMonstro(monstro, sentido){
+    if (monstro == 1){
+        if (sentido == 'esquerda'){
+            if (c1 == inicio){
+                alert('já está no primeiro')
+            }
+            else{
+                c1--
+            }
+        }
+        else{ //direita
+            if (c1 == fim){
+                alert('Já chegou no último')
+            }
+            else{
+                c1++
+            }
+
+        }
+    }
+    else if (monstro == 2){
+        if (sentido == 'esquerda'){
+            
+        }
+        else{ //direita
+            
+        }
+    }
+    else{
+        alert('Houve um problema no processamento de dados <br> Entre em contato com um desenvolvedor e relate o problema')
+    }
+
+    Batalha()
+}
+
+// TROCAR INDICADOR DO MONSTRO1 E 2 PELO INDICADOR C

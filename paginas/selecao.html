@@ -5,21 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../estilos/geral.css">
     <link rel="stylesheet" href="../estilos/selecao.css">
+    
+    
     <title>selecionar</title>
 </head>
 <body>
+    <h1>Selecionar Monstro</h1>
     <main>
-        <h1>Selecionar Monstro</h1>
-        <section>
-            <div>
-                
+        <section id="espaco1" class="espaco">
+            <p id="nome1" class="nome">nome</p>
+            <img id="imagem1" src="../midia/vazio.png" alt="Monstro selecionado">
+            <aside>
+                <p id="elemento1">elemento</p>
+                <p id="vida1">vida</p>
+                <p id="dano1">dano</p>
+                <p id="energia1">energia</p>
+            </aside>
+            
+            <div onclick="TrocarMonstro(1, 'esquerda')">
+                <svg  class="seta , setaleft" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z"/></svg>
             </div>
-            <div>
-                <a href="../paginas/batalha.html"><input type="button" value="selecionar" onclick="selecionar()"></a>
+            
+            <div onclick="TrocarMonstro(1, 'direita')">
+                <svg class="seta , setaright" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"/></svg>
             </div>
+            
+        </section>
+        
+
+
+
+        <p> VS </p>
+        <section id="espaco2" class="espaco">
+            <p id="nome2" class="nome">nome</p>
+            <img id="imagem2" src="../midia/vazio.png" alt="Monstro selecionado">
+            <aside>
+                <p id="elemento2">elemento</p>
+                <p id="vida2">vida</p>
+                <p id="dano2">dano</p>
+                <p id="energia2">energia</p>
+            </aside>
+
+            <div onclick="TrocarMonstro(2, 'esquerda')">
+                <svg  class="seta , setaleft" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z"/></svg>
+            </div>
+            
+            <div onclick="TrocarMonstro(2, 'direita')">
+                <svg  class="seta , setaright" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"/></svg>
+            </div>
+            
         </section>
     </main>
+        <div>
+            <a href="../paginas/batalha.html"><input type="button" value="selecionar" onclick="selecionar()"></a>
+        </div>
+       
 
-    <script src="../script/selecao.js"></script>
+
+    <script src="../script/batalha.js"></script>
 </body>
 </html>

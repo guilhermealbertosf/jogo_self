@@ -1,3 +1,0 @@
-function selecionar(){
-    alert('selecionado')
-}
