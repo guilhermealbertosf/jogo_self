@@ -19,12 +19,13 @@ main{
     text-align: center;
 }
 section{
+    position: relative;
     display: inline-block;
     width: 300px;
     height: 400px;
     background-color: white;
     border: 1px solid black;
-    margin: 30px;
+    margin-bottom: 50px;
 }
 
 section img{
@@ -40,20 +41,30 @@ aside p{
 }
 
 div#acoes{
+
     position: absolute;
+    width: 50px;
+    bottom: -45px;
+    right: 0px;
+
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px 0px 0px 10px;
 }
-div#acoes input{
-    background-color: white;
+
+div#acoes .botao_acao{
     color: black;
     width: 40px;
     height: 40px;
-    border-radius: 50%;
-    
+    border-radius: 30%;
+    margin: 5px 2px 5px 2px;  
+
 }
-
-
-main > p{
-    display: block;
-    font: bold 3em arial;
-    margin: 30px 0px;
+#atacar{
+    background-color: rgba(255, 0, 0, 0.447);
+}
+#defender{
+    background-color: rgba(0, 153, 255, 0.573);
+}
+#recarregar{
+    background-color: rgba(255, 200, 0, 0.742);
 }

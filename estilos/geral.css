@@ -2,20 +2,57 @@
 
 :root{
     /*Paleta de cores*/
-    --cor1:#C0544C;
+    
+    --cor1:#f0e6d6;
     --cor2:#fcca32;
-    --cor3:#463BC0;
-    --cor4:#48456B;
-    --cor5:#332626;
+    --cor3:#48456B;
+    --cor4:#463BC0;
+    --cor5:#191818;
+    --cor6:#34465d;
+    
 }
 
 *{
     margin: 0px;
-    padding: opx;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 div#voltar{
     position: absolute;
     display: block;
     top: 1px;
+}
+.botao_voltar , #botao_selecionar{
+    background-color: #fcca32;
+    color: #463BC0;
+    font: bold 1em arial;
+    border-radius: 5px;
+}
+
+
+main{
+    background-color: var(--cor1);
+}
+
+.nome{
+    font: normal 1.1em Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+
+.M_dados p{
+    padding: 5px;
+    text-align: justify;
+    border: 1px solid black;
+    background-color: var(--cor3);
+    color: white;
+    font: normal 1em ;
+    font-family: Verdana, Tahoma, sans-serif;
+}
+
+.vs{
+    color: rgb(134, 71, 39);
+    display: block;
+    font: bold 5em 'Courier New', Courier, monospace;
+    margin: 30px auto;
 }

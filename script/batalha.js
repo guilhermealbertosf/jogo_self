@@ -4,7 +4,7 @@
 let c1 = 1
 let c2 = 2
 let inicio = 1
-let fim = 3
+let fim = 4
 let energiaAtaque = 20
 let energiaDefesa = 10
 let energiaRecarga = 60
@@ -15,6 +15,7 @@ function energiaMsgRecarregar(){
     alert(`Você está sem energia! recarregue-a`)
 }
 
+let lista_de_elementos = {natureza:`\u{1F33F}`, fogo:`\u{1F525}`, agua:`\u{1F4A7}`, terra:`terra` ,som:`\u{1F50A}`, lutador:`\u2694\uFE0F`, polvora:`\u{1F4A3}`, magia:`\u2B50`}
 
 // COMPONENTES DOS MONSTROS
 
@@ -24,27 +25,32 @@ let nome = [
     'Serpendragon',
     'Croconot',
     'Colossus',
+    'tclasserous'
 ]
 let elemento = [
     '',
-    'Natureza',
-    'Fogo',
-    'Água',
+    `${lista_de_elementos.magia}`,
+    `${lista_de_elementos.fogo}`,
+    `${lista_de_elementos.agua}`,
+    `${lista_de_elementos.terra}`,
 ]
 let vida = [
     0,
     4000,
     5000,
     7800,
+    6000,
 ]
 let dano = [
     0,
     1200,
     2000,
     1000,
+    1300,
 ]  
 let energia = [
     0,
+    20,
     20,
     20,
     20,
@@ -54,6 +60,7 @@ let src = [
     '../midia/serpendragon.jpg',
     '../midia/croconot.jpg',
     '../midia/colossus.jpg',
+    `../midia/tclasserous.jpg`
 ]
 
 
@@ -94,6 +101,7 @@ function exibir(){
     imagem2.setAttribute('src', `${src[c2]}`)
 }
     
+
 
 
 
@@ -225,7 +233,6 @@ function defender(){
 
             if (energia[c2] >= energiaAtaque){ 
 
-                energia[c1] -= energiaDefesa
                 let possibilidades = ['Defesa', 'MeiaDefesa', 'ContraGolpe']
                 let resultado = possibilidades[Math.floor(Math.random()*possibilidades.length)]
 
@@ -247,6 +254,7 @@ function defender(){
                     alert(`Depois disso atacou novamente, CAUSANDO ${dano[c1]} e deixando ${nome[c2]} com ${vida[c2]} de vida`)
                     */
                 }
+                energia[c1] -= energiaDefesa
                 energia[c2] -= energiaAtaque
             }
             else{
@@ -350,7 +358,7 @@ function acaoInimigo(local=''){
             let resultado = possibilidades[Math.floor(Math.random()*possibilidades.length)]
 
             if(energia[c2] >= energiaDefesa){  
-                energia[c2] -= energiaDefesa
+                
 
                 if(resultado == 'Defesa'){
                     alert(`${nome[c2]} DEFENDEU o ataque`) // defesa
@@ -363,9 +371,14 @@ function acaoInimigo(local=''){
                     let ataque = (dano[c2] / 3).toFixed(0)
                     vida[c1] -= ataque
                     alert(`${nome[c2]} INTERCEPTOU o ataque de ${nome[c1]}, causando ${ataque} de DANO a ele`)
+                    /*
                     vida[c1] -= dano[c2]
                     alert(`Depois disso atacou novamente, CAUSANDO ${dano[c2]} e deixando ${nome[c1]} com ${vida[c1]}de vida`)
+                    */
+                    
                 }
+                energia[c2] -= energiaDefesa
+                
             }
             else{
                 vida[c2] -= dano[c1]

@@ -9,17 +9,23 @@
     
     <title>selecionar</title>
 </head>
-<body>
-    <h1>Selecionar Monstro</h1>
+<body onload="exibir()">
+    <header>
+        <h1>Selecionar Monstro</h1>
+        <div id="voltar"><a href="../index.html">
+            <input class="botao_voltar" type="button" value="Voltar"></a>
+        </div>
+    </header>
+    
     <main>
-        <section id="espaco1" class="espaco">
-            <p id="nome1" class="nome">Serpendragon</p>
+        <section id="espaco1" class="monstro">
+            <p id="nome1" class="nome"></p>
             <img id="imagem1" src="../midia/serpendragon.jpg" alt="Monstro selecionado">
-            <aside>
-                <p id="elemento1">Elemento: Natureza</p>
-                <p id="vida1">Hp: 4000</p>
-                <p id="dano1">Dano: 1200</p>
-                <p id="energia1">Energia: 20%</p>
+            <aside class="M_dados">
+                <p id="elemento1"></p>
+                <p id="vida1"></p>
+                <p id="dano1"></p>
+                <p id="energia1"></p>
             </aside>
             
             <div onclick="TrocarMonstro(1, 'esquerda')">
@@ -35,15 +41,15 @@
 
 
 
-        <p> VS </p>
-        <section id="espaco2" class="espaco">
-            <p id="nome2" class="nome">Croconot</p>
+        <p class="vs"> VS </p>
+        <section id="espaco2" class="monstro">
+            <p id="nome2" class="nome"></p>
             <img id="imagem2" src="../midia/croconot.jpg" alt="Monstro selecionado">
-            <aside>
-                <p id="elemento2">Elemento: Fogo</p>
-                <p id="vida2">Hp: 5000</p>
-                <p id="dano2">Dano: 2000</p>
-                <p id="energia2">Energia: 20%</p>
+            <aside class="M_dados">
+                <p id="elemento2"></p>
+                <p id="vida2"></p>
+                <p id="dano2"></p>
+                <p id="energia2"></p>
             </aside>
 
             <div onclick="TrocarMonstro(2, 'esquerda')">
@@ -56,9 +62,9 @@
             
         </section>
     </main>
-        <div>
-            <input type="button" value="selecionar" onclick="selecionar()">
-        </div>
+        
+    <input id="botao_selecionar" type="button" value="selecionar" onclick="selecionar()">
+        
        
 
 
