@@ -15,7 +15,7 @@ function energiaMsgRecarregar(){
     alert(`Você está sem energia! recarregue-a`)
 }
 
-let lista_de_elementos = {natureza:`\u{1F33F}`, fogo:`\u{1F525}`, agua:`\u{1F4A7}`, terra:`terra` ,som:`\u{1F50A}`, lutador:`\u2694\uFE0F`, polvora:`\u{1F4A3}`, magia:`\u2B50`}
+let lista_de_elementos = {natureza:`\u{1F33F}`, fogo:`\u{1F525}`, agua:`\u{1F4A7}`, terra:`\uD83C\uDFD4\uFE0F` ,som:`\u{1F50A}`, lutador:`\u2694\uFE0F`, polvora:`\u{1F4A3}`, magia:`\u2B50`}
 
 // COMPONENTES DOS MONSTROS
 
@@ -29,7 +29,7 @@ let nome = [
 ]
 let elemento = [
     '',
-    `${lista_de_elementos.magia}`,
+    `${lista_de_elementos.natureza}`,
     `${lista_de_elementos.fogo}`,
     `${lista_de_elementos.agua}`,
     `${lista_de_elementos.terra}`,
