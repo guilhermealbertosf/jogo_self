@@ -2,6 +2,15 @@ let c1 = 1
 let c2 = 2
 let inicio = 1
 let fim = 3
+let energiaAtaque = 20
+let energiaDefesa = 10
+let energiaRecarga = 60
+let energiaMax = 100
+function energiaMsgRecarregar(){
+    alert(`Você está sem energia! recarregue-a`)
+}
+
+let imagemDerrotado = `../midia/vazio.png`
 let nome = [
     '',
     'Serpendragon',
@@ -100,7 +109,7 @@ function exibir(){
     elemento1.innerText = `Elemento: ${elemento[c1]}`
     vida1.innerText = `Hp: ${vida[c1]}`
     dano1.innerText = `Dano: ${dano[c1]}`
-    energia1.innerText = `Energia: ${energia[c1]}`
+    energia1.innerText = `Energia: ${energia[c1]}%`
     imagem1.setAttribute('src', `${src[c1]}`)
 
 // Monstro inimigo
@@ -115,7 +124,7 @@ function exibir(){
     elemento2.innerText = `Elemento: ${elemento[c2]}`
     vida2.innerText = `Hp: ${vida[c2]}`
     dano2.innerText = `Dano: ${dano[c2]}`
-    energia2.innerText = `Energia: ${energia[c2]}`
+    energia2.innerText = `Energia: ${energia[c2]}%`
     imagem2.setAttribute('src', `${src[c2]}`)
 }
 
@@ -135,78 +144,178 @@ function processarC(){
 }
 
 function atacar(){
-    if(vida[c2] > 0 && vida[c1] > 0 && vida[c2] - dano[c1] > 0 && vida[c1] - dano[c2] > 0){
-        acaoInimigo()
+    if (energia[c1] >= energiaAtaque){
+        
+        if(vida[c2] > 0 && vida[c1] > 0 && vida[c2] - dano[c1] > 0 && vida[c1] - dano[c2] > 0){
+
+            energia[c1] -= energiaAtaque
+            acaoInimigo()
+        }
+        else if(vida[c2] - dano[c1] <= 0){ // Vitória
+            alert(`Você VENCEU! Muito bem`)
+            src[c2] = `${imagemDerrotado}`
+            vida[c2] = 0
+        }
+        else if(vida[c1] - dano[c2] <= 0){ // Derrota
+            alert(`Você PERDEU! Tente novamente`)
+            src[c1] = `${imagemDerrotado}`
+            vida[c1] = 0
+        }
+        else{ // ERRO ou INVÁLIDO
+            alert("ERROR")
+        }
+        exibir() 
+        }
+    else{
+        energiaMsgRecarregar()
     }
-    else if(vida[c2] - dano[c1] <= 0){ // Vitória
-        alert(`Você VENCEU! Muito bem`)
-        src[c2] = `../midia/vazio.png`
-        vida[c2] = 0
-    }
-    else if(vida[c1] - dano[c2] <= 0){ // Derrota
-        alert(`Você PERDEU! Tente novamente`)
-        src[c1] = `../midia/vazio.png`
-        vida[c1] = 0
-    }
-    else{ // ERRO ou INVÁLIDO
-        alert("ERROR")
-    }
-    exibir() 
 }
 
 function defender(){
-    let possibilidades = ['Defesa', 'MeiaDefesa', 'ContraGolpe']
-    let resultado = possibilidades[Math.floor(Math.random()*possibilidades.length)]
-    
-    if(resultado == 'Defesa'){
-        alert(`${nome[c1]} DEFENDEU o ataque`)
-    }
-    else if(resultado == 'MeiaDefesa'){
-        vida[c1] -= dano[c2] / 2
-        alert(`${nome[c1]} DEFENDEU PARTE do ataque, recebendo ${dano[c2]/2} de dano e ficando com ${vida[c1]}`)
-    }
-    else{
-        vida[c2] -= dano[c1] / 3
-        alert(`${nome[c1]} INTERCEPTOU o ataque de ${nome[c2]}, causando ${dano[c1] / 3} de DANO a ele`)
-        vida[c2] -= dano[c1]
-        alert(`Depois disso atacou novamente, CAUSANDO ${dano[c1]} e deixando ${nome[c2]} com ${vida[c2]}`)
-    }
-    exibir()
-}
+    if(energia[c1] >= energiaDefesa){ 
+        
+        if(vida[c2] > 0 && vida[c1] > 0  && vida[c2] - dano[c1] > 0 && vida[c1] - dano[c2] > 0){
 
-function recarregar(){
-    alert(`Esta função está em desenvolvimento.`)
-    exibir()
-}
+            if (energia[c2] >= energiaAtaque){ 
 
-function acaoInimigo(){
-    let possibilidades = ['Atacar', 'Defender']
-    let resultado = possibilidades[Math.floor(Math.random()*possibilidades.length)]
-    if(resultado == 'Atacar'){
-        vida[c2] -= dano[c1]
-        alert(`${nome[c1]} ATACOU ${nome[c2]} deixando ele com ${vida[c2]} de vida!`)
-        vida[c1] -= dano[c2]
-        alert(`${nome[c2]} CONTRA-ATACOU deixando ele com ${vida[c1]} de vida!`)    
-    }
-    else{ //defender
-        let possibilidades = ['Defesa', 'MeiaDefesa', 'ContraGolpe']
-        let resultado = possibilidades[Math.floor(Math.random()*possibilidades.length)]
+                energia[c1] -= energiaDefesa
+                let possibilidades = ['Defesa', 'MeiaDefesa', 'ContraGolpe']
+                let resultado = possibilidades[Math.floor(Math.random()*possibilidades.length)]
 
-        if(resultado == 'Defesa'){
-            alert(`${nome[c2]} DEFENDEU o ataque`)
+
+                if(resultado == 'Defesa'){ // defesa
+                    alert(`Você DEFENDEU o ataque`)
+                }
+                else if(resultado == 'MeiaDefesa'){ // meia defesa
+                    vida[c1] -= dano[c2] / 2
+                    alert(`Você DEFENDEU PARTE do ataque, recebendo ${dano[c2]/2} de dano e ficando com ${vida[c1]}`)
+                }
+                else{ //Interceptar
+                    let ataque = (dano[c1] / 3).toFixed(0)
+                    vida[c2] -= ataque
+                    alert(`Você INTERCEPTOU o ataque de ${nome[c2]}, causando ${ataque} de DANO a ele`)
+                    vida[c2] -= dano[c1]
+                    alert(`Depois disso atacou novamente, CAUSANDO ${dano[c1]} e deixando ${nome[c2]} com ${vida[c2]}`)
+                }
+                energia[c2] -= energiaAtaque
+            }
+            else{
+                alert(`Você não pode defender pois ${nome[c2]} não tem energia para te atacar`)
+                
+            }
+            
         }
-        else if(resultado == 'MeiaDefesa'){
-            vida[c2] -= dano[c1] / 2
-            alert(`${nome[c2]} DEFENDEU PARTE do ataque, recebendo ${dano[c1]/2} de dano e ficando com ${vida[c2]}`)
+        else if(vida[c2] - dano[c1] <= 0){ // Vitória
+            alert(`Você VENCEU! Muito bem`)
+            src[c2] = `${imagemDerrotado}`
+            vida[c2] = 0
+        }
+        else if(vida[c1] - dano[c2] <= 0){ // Derrota
+            alert(`${nome[c2]} NOCAUTEOU-LHE! Você PERDEU! Tente novamente`)
+            src[c1] = `${imagemDerrotado}`
+            vida[c1] = 0
+        }
+        else{ // ERRO ou INVÁLIDO
+            alert("ERROR")
+        }
+
+    }else{
+        energiaMsgRecarregar()
+    }
+    exibir()
+}
+
+
+function recarregar(c){
+    if(c == c1){
+        if(energia[c] == energiaMax){
+        alert(`Sua energia já está no máximo!`)
         }
         else{
-            vida[c1] -= dano[c2] / 3
-            alert(`${nome[c2]} INTERCEPTOU o ataque de ${nome[c1]}, causando ${dano[c2] / 3} de DANO a ele`)
-            vida[c1] -= dano[c2]
-            alert(`Depois disso atacou novamente, CAUSANDO ${dano[c2]} e deixando ${nome[c1]} com ${vida[c1]}`)
-        }
-        exibir()
+            if(energia[c] + energiaRecarga > energiaMax){
+                energia[c] = energiaMax
+            }
+            else{
+                energia[c] += energiaRecarga 
+            }
+            alert(`Recarga efetuada`)
+            
+            // Inimigo ataca
+            acaoInimigo("recarga_c1")
+        }  
     }
+    else if (c == c2){
+        if(energia[c] + energiaRecarga > energiaMax){
+            energia[c] = energiaMax
+        }
+        else{
+            energia[c] += energiaRecarga 
+        }
+        alert(`${nome[c]} recarregou`)
+    }
+    
+    
+    exibir()
+}
+
+
+function acaoInimigo(local=''){
+    
+    if(local == 'recarga_c1'){
+        if(energia[c2] >= energiaAtaque){
+            energia[c2] -= energiaAtaque
+            vida[c1] -= dano[c2]
+            alert(`${nome[c2]} ATACOU-LHE deixando-o com ${vida[c1]} de vida!`)
+        }
+        else{
+            recarregar(c2)
+        }
+    }
+    else{            
+        let possibilidades = ['Atacar', 'Defender']
+        resultado = possibilidades[Math.floor(Math.random()*possibilidades.length)]
+
+        if(resultado == 'Atacar'){
+            if(energia[c2] >= energiaAtaque){
+                energia[c2] -= energiaAtaque
+                vida[c2] -= dano[c1]
+                alert(`${nome[c1]} ATACOU ${nome[c2]} deixando ele com ${vida[c2]} de vida!`)
+                vida[c1] -= dano[c2]
+                alert(`${nome[c2]} CONTRA-ATACOU deixando ele com ${vida[c1]} de vida!`)
+            }
+            else{
+                recarregar(c2)
+            }
+                
+        }
+        else{ //defender
+            let possibilidades = ['Defesa', 'MeiaDefesa', 'ContraGolpe']
+            let resultado = possibilidades[Math.floor(Math.random()*possibilidades.length)]
+
+            if(energia[c2] >= energiaDefesa){  
+                energia[c2] -= energiaDefesa
+
+                if(resultado == 'Defesa'){
+                    alert(`${nome[c2]} DEFENDEU o ataque`) // defesa
+                }
+                else if(resultado == 'MeiaDefesa'){ // meia defesa
+                    vida[c2] -= dano[c1] / 2
+                    alert(`${nome[c2]} DEFENDEU PARTE do ataque, recebendo ${dano[c1]/2} de dano e ficando com ${vida[c2]}`)
+                }
+                else{ // interceptar
+                    let ataque = (dano[c2] / 3).toFixed(0)
+                    vida[c1] -= ataque
+                    alert(`${nome[c2]} INTERCEPTOU o ataque de ${nome[c1]}, causando ${ataque} de DANO a ele`)
+                    vida[c1] -= dano[c2]
+                    alert(`Depois disso atacou novamente, CAUSANDO ${dano[c2]} e deixando ${nome[c1]} com ${vida[c1]}`)
+                }
+            }else{
+                recarregar(c2)
+            }
+        }
+    }
+
+    exibir()
 }
 
 
