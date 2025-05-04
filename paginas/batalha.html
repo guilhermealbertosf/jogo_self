@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../estilos/batalha.css">
     <title>Der Konflikt</title>
 </head>
-<body onload="Batalha()">
+<body onload="processarC()">
     <header>
         
         <nav>
@@ -15,10 +15,14 @@
                 <input type="button" value="Voltar"></a>
             </div>
 
-           
+           <!--
             <div id="comecar">
-                <input type="button" value="Começar" onclick="">
+                <input type="button" value="BATALHAR" onclick="">
             </div>
+           -->
+            
+           
+            
             
 
         </nav>
@@ -35,9 +39,9 @@
                 <p id="energia1">energia</p>
             </aside>
             <div id="acoes">
-                <input type="button" value="ATK" id="atacar" onclick="">
-                <input type="button" value="DEF" id="defender" onclick="">
-                <input type="button" value="REC" id="recarregar" onclick="">
+                <input type="button" value="ATK" id="atacar" onclick="atacar()">
+                <input type="button" value="DEF" id="defender" onclick="defender()">
+                <input type="button" value="REC" id="recarregar" onclick="recarregar()">
             </div>
         </section>
         
