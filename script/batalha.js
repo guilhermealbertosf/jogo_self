@@ -1,3 +1,6 @@
+
+// VARIÁVEIS GERAIS
+
 let c1 = 1
 let c2 = 2
 let inicio = 1
@@ -6,11 +9,16 @@ let energiaAtaque = 20
 let energiaDefesa = 10
 let energiaRecarga = 60
 let energiaMax = 100
+let imagemDerrotado = `../midia/DERROTADO.jpg`
+
 function energiaMsgRecarregar(){
     alert(`Você está sem energia! recarregue-a`)
 }
 
-let imagemDerrotado = `../midia/vazio.png`
+
+// COMPONENTES DOS MONSTROS
+
+
 let nome = [
     '',
     'Serpendragon',
@@ -47,11 +55,55 @@ let src = [
     '../midia/croconot.jpg',
     '../midia/colossus.jpg',
 ]
+
+
+
+
+// FUNÇÃO RESPONSÁVEL POR EXIBIR AS INFORMAÇÕES NA TELA 
+
+function exibir(){
+
+    // Monstro seleconado
+    let nome1 = document.getElementById('nome1')
+    let elemento1 = document.getElementById('elemento1')
+    let vida1 = document.getElementById('vida1')
+    let dano1 = document.getElementById('dano1')
+    let energia1 = document.getElementById('energia1')
+    let imagem1 = document.getElementById('imagem1')
+
+    nome1.innerText = `${nome[c1]}`
+    elemento1.innerText = `Elemento: ${elemento[c1]}`
+    vida1.innerText = `Hp: ${vida[c1]}`
+    dano1.innerText = `Dano: ${dano[c1]}`
+    energia1.innerText = `Energia: ${energia[c1]}%`
+    imagem1.setAttribute('src', `${src[c1]}`)
+
+    // Monstro inimigo
+    let nome2 = document.getElementById('nome2')
+    let elemento2 = document.getElementById('elemento2')
+    let vida2 = document.getElementById('vida2')
+    let dano2 = document.getElementById('dano2')
+    let energia2 = document.getElementById('energia2')
+    let imagem2 = document.getElementById('imagem2')
+
+    nome2.innerText = `${nome[c2]}`
+    elemento2.innerText = `Elemento: ${elemento[c2]}`
+    vida2.innerText = `Hp: ${vida[c2]}`
+    dano2.innerText = `Dano: ${dano[c2]}`
+    energia2.innerText = `Energia: ${energia[c2]}%`
+    imagem2.setAttribute('src', `${src[c2]}`)
+}
+    
+
+
+
+// FUNÇÃO RESPONSÁVEL PELOS BOTÕES NA ABA DE SELEÇÃO
+
 function TrocarMonstro(monstro, sentido){
     if (monstro == 1){
         if (sentido == 'esquerda'){
             if (c1 == inicio){
-                alert('já está no primeiro')
+                //alert('já está no primeiro')
             }
             else{
                 c1--
@@ -59,7 +111,7 @@ function TrocarMonstro(monstro, sentido){
         }
         else{ //direita
             if (c1 == fim){
-                alert('Já chegou no último')
+                //alert('Já chegou no último')
             }
             else{
                 c1++
@@ -70,7 +122,7 @@ function TrocarMonstro(monstro, sentido){
     else if (monstro == 2){
         if (sentido == 'esquerda'){
             if (c2 == inicio){
-                alert('já está no primeiro')
+                //alert('já está no primeiro')
             }
             else{
                 c2--
@@ -78,7 +130,7 @@ function TrocarMonstro(monstro, sentido){
         }
         else{ //direita
             if (c2 == fim){
-                alert('Já chegou no último')
+                //alert('Já chegou no último')
             }
             else{
                 c2++
@@ -95,46 +147,27 @@ function TrocarMonstro(monstro, sentido){
 
 
 
-function exibir(){
-
-// Monstro seleconado
-    let nome1 = document.getElementById('nome1')
-    let elemento1 = document.getElementById('elemento1')
-    let vida1 = document.getElementById('vida1')
-    let dano1 = document.getElementById('dano1')
-    let energia1 = document.getElementById('energia1')
-    let imagem1 = document.getElementById('imagem1')
-
-    nome1.innerText = `${nome[c1]}`
-    elemento1.innerText = `Elemento: ${elemento[c1]}`
-    vida1.innerText = `Hp: ${vida[c1]}`
-    dano1.innerText = `Dano: ${dano[c1]}`
-    energia1.innerText = `Energia: ${energia[c1]}%`
-    imagem1.setAttribute('src', `${src[c1]}`)
-
-// Monstro inimigo
-    let nome2 = document.getElementById('nome2')
-    let elemento2 = document.getElementById('elemento2')
-    let vida2 = document.getElementById('vida2')
-    let dano2 = document.getElementById('dano2')
-    let energia2 = document.getElementById('energia2')
-    let imagem2 = document.getElementById('imagem2')
-
-    nome2.innerText = `${nome[c2]}`
-    elemento2.innerText = `Elemento: ${elemento[c2]}`
-    vida2.innerText = `Hp: ${vida[c2]}`
-    dano2.innerText = `Dano: ${dano[c2]}`
-    energia2.innerText = `Energia: ${energia[c2]}%`
-    imagem2.setAttribute('src', `${src[c2]}`)
-}
-
+// FUNÇÃO RESPONSÁVEL POR REGIR E ARMAZENAR OS MONSTROS SELECIONADOS
 
 function selecionar(){
-    sessionStorage.setItem('c1', c1)
-    sessionStorage.setItem('c2', c2)
+    if (nome[c1] == nome[c2]){
+        alert(`Escolha mosntros diferentes para batalhar`)
+    }
+    else{
+        sessionStorage.setItem('c1', c1)
+        sessionStorage.setItem('c2', c2)
+
+        window.location.href = '../paginas/batalha.html'
+    }
+    
     //alert(`Valor do c1 é ${c1} e c2 é ${c2}`)
 
 }
+
+
+
+
+// FUNÇÃO RESPONSÁVEL POR RESGATAR OS VALORES DE C1 E C2
 
 function processarC(){
     c1 = parseInt(sessionStorage.getItem('c1'))
@@ -143,12 +176,21 @@ function processarC(){
     exibir()
 }
 
+
+
+
+// FUNÇÃO RESPONSÁVEL PELA AÇÃO DE ATAQUE DO SEU MONSTRO
+
 function atacar(){
     if (energia[c1] >= energiaAtaque){
         
         if(vida[c2] > 0 && vida[c1] > 0 && vida[c2] - dano[c1] > 0 && vida[c1] - dano[c2] > 0){
 
             energia[c1] -= energiaAtaque
+            /*
+            vida[c2] -= dano[c1]
+            alert(`Você ATACOU ${nome[c2]} e deixou ele com ${vida[c2]} de vida`)
+            */
             acaoInimigo()
         }
         else if(vida[c2] - dano[c1] <= 0){ // Vitória
@@ -171,6 +213,11 @@ function atacar(){
     }
 }
 
+
+
+
+// FUNÇÃO RESPONSÁVEL PELA AÇÃO DE DEFESA DO SEU MONSTRO
+
 function defender(){
     if(energia[c1] >= energiaDefesa){ 
         
@@ -188,14 +235,17 @@ function defender(){
                 }
                 else if(resultado == 'MeiaDefesa'){ // meia defesa
                     vida[c1] -= dano[c2] / 2
-                    alert(`Você DEFENDEU PARTE do ataque, recebendo ${dano[c2]/2} de dano e ficando com ${vida[c1]}`)
+                    alert(`Você DEFENDEU PARTE do ataque, recebendo ${dano[c2]/2} de dano e ficando com ${vida[c1]} de vida`)
                 }
                 else{ //Interceptar
                     let ataque = (dano[c1] / 3).toFixed(0)
                     vida[c2] -= ataque
                     alert(`Você INTERCEPTOU o ataque de ${nome[c2]}, causando ${ataque} de DANO a ele`)
+                    
+                    /*
                     vida[c2] -= dano[c1]
-                    alert(`Depois disso atacou novamente, CAUSANDO ${dano[c1]} e deixando ${nome[c2]} com ${vida[c2]}`)
+                    alert(`Depois disso atacou novamente, CAUSANDO ${dano[c1]} e deixando ${nome[c2]} com ${vida[c2]} de vida`)
+                    */
                 }
                 energia[c2] -= energiaAtaque
             }
@@ -226,6 +276,10 @@ function defender(){
 }
 
 
+
+
+// FUNÇÃO RESPONSÁVEL PELA AÇÃO DE RECARREGAR DE AMBOS OS MONSTROS
+
 function recarregar(c){
     if(c == c1){
         if(energia[c] == energiaMax){
@@ -253,11 +307,12 @@ function recarregar(c){
         }
         alert(`${nome[c]} recarregou`)
     }
-    
-    
     exibir()
 }
 
+
+
+// FUNÇÃO RESPONSÁVEL PELAS AÇÕES DO MONSTRO ADVERSÁRIO
 
 function acaoInimigo(local=''){
     
@@ -279,11 +334,13 @@ function acaoInimigo(local=''){
             if(energia[c2] >= energiaAtaque){
                 energia[c2] -= energiaAtaque
                 vida[c2] -= dano[c1]
-                alert(`${nome[c1]} ATACOU ${nome[c2]} deixando ele com ${vida[c2]} de vida!`)
+                alert(`Você ATACOU ${nome[c2]} deixando ele com ${vida[c2]} de vida!`)
                 vida[c1] -= dano[c2]
                 alert(`${nome[c2]} CONTRA-ATACOU deixando ele com ${vida[c1]} de vida!`)
             }
             else{
+                vida[c2] -= dano[c1]
+                alert(`Você ATACOU ${nome[c2]} deixando ele com ${vida[c2]} de vida!`)
                 recarregar(c2)
             }
                 
@@ -300,37 +357,23 @@ function acaoInimigo(local=''){
                 }
                 else if(resultado == 'MeiaDefesa'){ // meia defesa
                     vida[c2] -= dano[c1] / 2
-                    alert(`${nome[c2]} DEFENDEU PARTE do ataque, recebendo ${dano[c1]/2} de dano e ficando com ${vida[c2]}`)
+                    alert(`${nome[c2]} DEFENDEU PARTE do ataque, recebendo ${dano[c1]/2} de dano e ficando com ${vida[c2]} de vida`)
                 }
                 else{ // interceptar
                     let ataque = (dano[c2] / 3).toFixed(0)
                     vida[c1] -= ataque
                     alert(`${nome[c2]} INTERCEPTOU o ataque de ${nome[c1]}, causando ${ataque} de DANO a ele`)
                     vida[c1] -= dano[c2]
-                    alert(`Depois disso atacou novamente, CAUSANDO ${dano[c2]} e deixando ${nome[c1]} com ${vida[c1]}`)
+                    alert(`Depois disso atacou novamente, CAUSANDO ${dano[c2]} e deixando ${nome[c1]} com ${vida[c1]}de vida`)
                 }
-            }else{
+            }
+            else{
+                vida[c2] -= dano[c1]
+                alert(`Você ATACOU ${nome[c2]} deixando ele com ${vida[c2]} de vida!`)
                 recarregar(c2)
             }
         }
     }
-
     exibir()
 }
-
-
-
-/*
-function Batalhar(){
-    let meumonstro = {nome: nome[c1] , elemento: elemento[c1] , vida: vida[c1], dano: dano[c1], energia: energia[c1], imagem: src[c1]}
-
-    let inimigo = {nome: nome[c2] , elemento: elemento[c2] , vida: vida[c2], dano: dano[c2], energia: energia[c2], imagem: src[c2]}
-
-    function atacar(){
-        inimigo.vida -= meumonstro.dano
-        exibir()
-    }
-}
-*/
-
 
