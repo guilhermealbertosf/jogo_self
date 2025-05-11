@@ -2,9 +2,6 @@
 
 
 
-body{
-    background-color: var(--cor1);
-}
 
 div#comecar{
     margin-top: 30px;
@@ -13,6 +10,8 @@ div#comecar{
 header h1{
     padding: 20px;
     text-align: center;
+    
+    font-family: Verdana, Tahoma, sans-serif;
 }
 
 main{
@@ -49,6 +48,7 @@ div#acoes{
 
     background-color: rgb(255, 255, 255);
     border-radius: 10px 0px 0px 10px;
+
 }
 
 div#acoes .botao_acao{

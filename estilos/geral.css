@@ -31,6 +31,10 @@ div#voltar{
 }
 
 
+body{
+    background-color: #c25151;
+}
+
 main{
     background-color: var(--cor1);
 }

@@ -205,11 +205,13 @@ function atacar(){
             alert(`Você VENCEU! Muito bem`)
             src[c2] = `${imagemDerrotado}`
             vida[c2] = 0
+            ocultar_controle()
         }
         else if(vida[c1] - dano[c2] <= 0){ // Derrota
             alert(`Você PERDEU! Tente novamente`)
             src[c1] = `${imagemDerrotado}`
             vida[c1] = 0
+            ocultar_controle()
         }
         else{ // ERRO ou INVÁLIDO
             alert("ERROR")
@@ -267,11 +269,13 @@ function defender(){
             alert(`Você VENCEU! Muito bem`)
             src[c2] = `${imagemDerrotado}`
             vida[c2] = 0
+            ocultar_controle()
         }
         else if(vida[c1] - dano[c2] <= 0){ // Derrota
             alert(`${nome[c2]} NOCAUTEOU-LHE! Você PERDEU! Tente novamente`)
             src[c1] = `${imagemDerrotado}`
             vida[c1] = 0
+            ocultar_controle()
         }
         else{ // ERRO ou INVÁLIDO
             alert("ERROR")
@@ -326,9 +330,19 @@ function acaoInimigo(local=''){
     
     if(local == 'recarga_c1'){
         if(energia[c2] >= energiaAtaque){
-            energia[c2] -= energiaAtaque
-            vida[c1] -= dano[c2]
-            alert(`${nome[c2]} ATACOU-LHE deixando-o com ${vida[c1]} de vida!`)
+            if(vida[c1] - dano[c2] > 0){
+                energia[c2] -= energiaAtaque
+                vida[c1] -= dano[c2]
+                alert(`${nome[c2]} ATACOU-LHE deixando-o com ${vida[c1]} de vida!`)
+            }
+            else{
+                alert(`${nome[c2]} ATACOU-LHE enquanto você se recarregava! Você foi ELIMINADO!`)
+                src[c1] = `${imagemDerrotado}`
+                vida[c1] = 0
+                ocultar_controle()
+            }
+            
+
         }
         else{
             recarregar(c2)
@@ -390,3 +404,10 @@ function acaoInimigo(local=''){
     exibir()
 }
 
+
+
+
+function ocultar_controle(){
+    let controle = document.getElementById("acoes")
+    controle.style.display = 'none'
+}
