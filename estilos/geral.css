@@ -8,7 +8,7 @@
     --cor3:#48456B;
     --cor4:#463BC0;
     --cor5:#191818;
-    --cor6:#34465d;
+    --cor6:#863438;
     
 }
 
@@ -18,10 +18,12 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Botões */
+
 div#voltar{
     position: absolute;
     display: block;
-    top: 1px;
+    top: 10px;
 }
 .botao_voltar , #botao_selecionar{
     background-color: #fcca32;
@@ -30,9 +32,30 @@ div#voltar{
     border-radius: 5px;
 }
 
+.botao_voltar:hover , #botao_selecionar:hover{
+    background-color: rgb(255, 234, 0);
+}
+
+.botao_voltar:active , #botao_selecionar:active{
+    background-color: rgb(255, 179, 46);
+}
+
+.botoes_index:hover{
+    background-color: #eceaea;
+}
+
+.botoes_index:active{
+    background-color: rgb(175, 175, 175);
+}
+
+
+
+/*  Fim botões  */
+
 
 body{
     background-color: #c25151;
+    padding: 10px;
 }
 
 main{

@@ -10,17 +10,23 @@
     <!--Der Konflikt-->
 </head>
 <body>
-    <header>
-        <h1>Der Konflikt</h1>
-    </header>
-    <section>
-        <p><a href="paginas/selecao.html"><input type="button" value="Start Game"></a></p>
-        <p><a href="paginas/dev.html"><input type="button" value="Desenvolvedor"></a></p>
-        <p><input type="button" value="Exit" onclick="sair()"></p>
-    </section>
+    <main>
+        <header>
+            <h1>Der Konflikt</h1>
+            
+        </header>
+        <section>
+            <p><a href="paginas/selecao.html"><input type="button" value="Jogar" class="botoes_index"></a></p>
+
+            <p><input type="button" value="Configurações" onclick="mensagem_do_dev()" class="botoes_index"></p>
+
+            <p><input type="button" value="Sair" onclick="mensagem_do_dev()" class="botoes_index"></p>
+        </section>
+        <img id="logo" src="midia/icone-derkonflit-40px.png" alt="icone der konflit">
+    </main>
 
     <script>
-        function sair(){
+        function mensagem_do_dev(){
             alert("Esta funcionalidade está em desenvolvimento")
         }
     </script>
