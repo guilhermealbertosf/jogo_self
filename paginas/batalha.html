@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../estilos/batalha.css">
     <title>Der Konflikt</title>
 </head>
-<body onload="processarC()">
+<body onload="processarC() ,  musica(3)">
     <header>
         <nav>
             <div id="voltar"><a href="../index.html">
@@ -58,8 +58,10 @@
             
         </section>
 
+        <audio id="musicacombate" class="musica" src="../midia/musica.mp3" loop></audio>
     </main>
 
     <script src="../script/batalha.js"></script>
+    <script src="../script/configuracoes.js"></script>
 </body>
 </html>

@@ -10,7 +10,7 @@
     
     <title>selecionar</title>
 </head>
-<body onload="exibir()">
+<body onload="exibir(), musica(2)">
     <header>
         <h1>Selecionar Monstro</h1>
         <div id="voltar"><a href="../index.html">
@@ -66,9 +66,10 @@
         
     <input id="botao_selecionar" type="button" value="selecionar" onclick="selecionar()">
         
-       
+    <audio id="musicacombate" class="musica" src="../midia/musica.mp3" loop></audio>
 
 
     <script src="../script/batalha.js"></script>
+    <script src="../script/configuracoes.js"></script>
 </body>
 </html>

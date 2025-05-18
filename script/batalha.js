@@ -1,5 +1,26 @@
+// Sumário
 
-// VARIÁVEIS GERAIS
+/*
+01 - Variaveis gerais
+02 - Componentes dos monstros
+03 - Função Exibir
+04 - Função dos botões de seleção
+05 - Função selecionar
+06 - Função de resgatar os monstros escolhidos
+07 - Função de atacar
+08 - Função de defender
+09 - Função de recarregar
+10 - Função de ação do adversário
+11 - Função de ocultar o controle da batalha
+12 - 
+13 - 
+
+*/
+
+
+
+
+// 1-VARIÁVEIS GERAIS
 
 let c1 = 1
 let c2 = 2
@@ -17,7 +38,7 @@ function energiaMsgRecarregar(){
 
 let lista_de_elementos = {natureza:`\u{1F33F}`, fogo:`\u{1F525}`, agua:`\u{1F4A7}`, terra:`\uD83C\uDFD4\uFE0F` ,som:`\u{1F50A}`, lutador:`\u2694\uFE0F`, polvora:`\u{1F4A3}`, magia:`\u2B50`}
 
-// COMPONENTES DOS MONSTROS
+// 2-COMPONENTES DOS MONSTROS
 
 
 let nome = [
@@ -64,9 +85,7 @@ let src = [
 ]
 
 
-
-
-// FUNÇÃO RESPONSÁVEL POR EXIBIR AS INFORMAÇÕES NA TELA 
+// 3- FUNÇÃO RESPONSÁVEL POR EXIBIR AS INFORMAÇÕES NA TELA 
 
 function exibir(){
 
@@ -105,7 +124,7 @@ function exibir(){
 
 
 
-// FUNÇÃO RESPONSÁVEL PELOS BOTÕES NA ABA DE SELEÇÃO
+// 4-FUNÇÃO RESPONSÁVEL PELOS BOTÕES NA ABA DE SELEÇÃO
 
 function TrocarMonstro(monstro, sentido){
     if (monstro == 1){
@@ -155,7 +174,7 @@ function TrocarMonstro(monstro, sentido){
 
 
 
-// FUNÇÃO RESPONSÁVEL POR REGIR E ARMAZENAR OS MONSTROS SELECIONADOS
+// 5-FUNÇÃO RESPONSÁVEL POR REGIR E ARMAZENAR OS MONSTROS SELECIONADOS
 
 function selecionar(){
     if (nome[c1] == nome[c2]){
@@ -175,7 +194,7 @@ function selecionar(){
 
 
 
-// FUNÇÃO RESPONSÁVEL POR RESGATAR OS VALORES DE C1 E C2
+// 6- FUNÇÃO RESPONSÁVEL POR RESGATAR OS VALORES DE C1 E C2
 
 function processarC(){
     c1 = parseInt(sessionStorage.getItem('c1'))
@@ -187,7 +206,7 @@ function processarC(){
 
 
 
-// FUNÇÃO RESPONSÁVEL PELA AÇÃO DE ATAQUE DO SEU MONSTRO
+// 7-FUNÇÃO RESPONSÁVEL PELA AÇÃO DE ATAQUE DO SEU MONSTRO
 
 function atacar(){
     if (energia[c1] >= energiaAtaque){
@@ -226,7 +245,7 @@ function atacar(){
 
 
 
-// FUNÇÃO RESPONSÁVEL PELA AÇÃO DE DEFESA DO SEU MONSTRO
+// 8-FUNÇÃO RESPONSÁVEL PELA AÇÃO DE DEFESA DO SEU MONSTRO
 
 function defender(){
     if(energia[c1] >= energiaDefesa){ 
@@ -290,7 +309,7 @@ function defender(){
 
 
 
-// FUNÇÃO RESPONSÁVEL PELA AÇÃO DE RECARREGAR DE AMBOS OS MONSTROS
+// 9-FUNÇÃO RESPONSÁVEL PELA AÇÃO DE RECARREGAR DE AMBOS OS MONSTROS
 
 function recarregar(c){
     if(c == c1){
@@ -324,7 +343,7 @@ function recarregar(c){
 
 
 
-// FUNÇÃO RESPONSÁVEL PELAS AÇÕES DO MONSTRO ADVERSÁRIO
+// 10 - FUNÇÃO RESPONSÁVEL PELAS AÇÕES DO MONSTRO ADVERSÁRIO
 
 function acaoInimigo(local=''){
     
@@ -405,9 +424,16 @@ function acaoInimigo(local=''){
 }
 
 
-
+// 11- FUNÇÃO PARA OCULTAR O CONTROLE DA BATALHA    
 
 function ocultar_controle(){
     let controle = document.getElementById("acoes")
     controle.style.display = 'none'
 }
+
+
+
+// 12 - FUNÇÃO DE CONTROLAR O AUDIO
+
+
+    

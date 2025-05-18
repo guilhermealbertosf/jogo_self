@@ -9,7 +9,7 @@
     <title>O-Conflito-game</title>
     <!--Der Konflikt-->
 </head>
-<body>
+<body onload="musica(1)">
     <main>
         <header>
             <h1>Der Konflikt</h1>
@@ -23,6 +23,9 @@
             <p><input type="button" value="Sair" onclick="mensagem_do_dev()" class="botoes_index"></p>
         </section>
         <img id="logo" src="midia/icone-derkonflit-40px.png" alt="icone der konflit">
+
+
+        <audio id="musicacombate" class="musica" src="midia/musica.mp3" loop></audio>
     </main>
 
     <script>
@@ -30,5 +33,6 @@
             alert("Esta funcionalidade está em desenvolvimento")
         }
     </script>
+    <script src="script/configuracoes.js"></script>
 </body>
 </html>
