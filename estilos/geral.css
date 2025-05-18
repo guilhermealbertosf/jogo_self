@@ -25,9 +25,13 @@ div#voltar{
     display: block;
     top: 10px;
 }
+
+.botao_voltar{
+    padding: 3px;
+}
 .botao_voltar , #botao_selecionar{
-    background-color: #fcca32;
-    color: #463BC0;
+    background-color: #3582b9;
+    color: #ffffff;
     font: bold 1em arial;
     border-radius: 5px;
 }

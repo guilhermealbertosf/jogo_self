@@ -1,9 +1,7 @@
 @charset "UTF-8";
 
 
-main{
-    padding: 10px;
-}
+
 
 header{
     text-align: center;
@@ -13,8 +11,6 @@ header h1{
     margin-bottom: 50px;
 }
 
-main div{
-    position: absolute;
-    display: inline-block;
+main{
     padding: 10px;
 }

@@ -10,14 +10,21 @@
 </head>
 <body onload="">
     <header>
-        <h1>Der Konflikt</h1>
+        <h1>Configurações</h1>
         <nav>
             <div id="voltar"><a href="../index.html"><input type="button" value="Voltar" class="botao_voltar"></a></div>
         </nav>
     </header>
     <main>
+        <p>
+            MUSICA:
+            <input type="button" value="Tocar" onclick="musica(1)">
+            <input type="button" value="Parar" onclick="musica(0)">
+        </p>
+        
 
+        <audio id="musicacombate" class="musica" src="../midia/musica.mp3" loop></audio>
     </main>
-    <script src="../script/dev.js"></script>
+    <script src="../script/configuracoes.js"></script>
 </body>
 </html>
