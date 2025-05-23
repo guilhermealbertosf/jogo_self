@@ -15,16 +15,38 @@
             <div id="voltar"><a href="../index.html"><input type="button" value="Voltar" class="botao_voltar"></a></div>
         </nav>
     </header>
-    <main>
-        <p>
-            MUSICA:
-            <input type="button" value="Tocar" onclick="musica(1)">
-            <input type="button" value="Parar" onclick="musica(0)">
-        </p>
+    <menu>
+        <section id="musica">
+            <h2>Músicas</h2>
+            <p>
+                <input id="botao_ligar_musica" type="button" value="Ligar" onclick="mutar_ligar('ligar')">
+                <input id="botao_mutar_musica" type="button" value="Mutar" onclick="mutar_ligar('mutar')">
+            </p>
+            <audio id="musicacombate" class="musica" src="../midia/musica.mp3" loop></audio>
+           
+        </section>
+
+        <!--
+        <section id="interface">
+            <h2>Interface</h2>
+            <p>
+                <input id="botao_fundo_claro" onclick="interface('claro')" type="button" value="Claro">
+                <input id="botao_fundo_escuro" onclick="interface('escuro')" type="button" value="Escuro">
+            </p>
+        </section>
+        -->
         
 
-        <audio id="musicacombate" class="musica" src="../midia/musica.mp3" loop></audio>
-    </main>
+        <section id="referencias">
+            <h2>Referências</h2>
+            <p>
+                Music by <a href="https://pixabay.com/pt/users/land_of_books_youtube-7733644/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=223565">Jimmy F.</a> from <a href="https://pixabay.com/music//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=223565">Pixabay</a>
+            </p>
+            <p>
+                Music by <a href="https://pixabay.com/pt/users/musictown-25873992/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=103656">Musictown</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=103656">Pixabay</a>
+            </p>
+        </section>
+    </menu>
     <script src="../script/configuracoes.js"></script>
 </body>
 </html>

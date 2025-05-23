@@ -1,16 +1,34 @@
 @charset "UTF-8";
 
 
-
-
+body{
+    background-color: var(--cor3);
+}
 header{
     text-align: center;
+    background-color: rgb(165, 164, 164);
+    border-radius: 12px;
 }
 header h1{
     padding: 10px;
     margin-bottom: 50px;
 }
 
-main{
+menu{
     padding: 10px;
+    background-color: rgb(213, 213, 213);
+}
+
+section{
+    margin: auto auto 30px auto;
+}
+
+section input{
+    padding: 4px;
+    border-radius: 20%;
+    background-color: white;
+}
+
+section input:active{
+    background-color: lightblue;
 }
