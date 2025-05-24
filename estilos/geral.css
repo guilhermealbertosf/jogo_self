@@ -18,6 +18,7 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+
 /* Botões */
 
 div#voltar{
@@ -45,11 +46,11 @@ div#voltar{
 }
 
 .botoes_index:hover{
-    background-color: #eceaea;
+    background-color: rgba(255, 145, 2, 0.888);
 }
 
 .botoes_index:active{
-    background-color: rgb(175, 175, 175);
+    background-color: white;
 }
 
 
@@ -58,12 +59,13 @@ div#voltar{
 
 
 body{
-    background-color: #c25151;
-    padding: 10px;
+    background: var(--cor5) url(../midia/imagem_de_fundo.jpg) center no-repeat fixed;
+    background-size: cover;
+    padding-bottom: 10px;
 }
 
 main{
-    background-color: var(--cor1);
+    background-color: #f0e6d64b;
 }
 
 .nome{
