@@ -59,7 +59,7 @@ div#voltar{
 
 
 body{
-    background: var(--cor5) url(../midia/imagem_de_fundo.jpg) center no-repeat fixed;
+    background: var(--cor5) url(../midia/imagem_de_fundo1-350px.jpg) center no-repeat fixed;
     background-size: cover;
     padding-bottom: 10px;
 }
