@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="midia/icone-derkonflit-40px.png" type="image/x-icon">
-    <link rel="stylesheet" href="../estilos/geral.css">
-    <link rel="stylesheet" href="../estilos/batalha.css">
+
+    <link rel="stylesheet" href="../estilos/geral.css" media="all">
+
+    <link rel="stylesheet" href="../estilos/batalha.css" media="screen">
+
     <title>Der Konflikt</title>
 </head>
 <body onload="processarC() ,  musica(3)">
@@ -18,45 +21,43 @@
         <h1>Batalha</h1>
     </header>
     <main>
-        <section id="espaco1" class="monstro">
-            <p id="nome1" class="nome">nome</p>
-            <img id="imagem1" src="../midia/vazio.png" alt="Monstro selecionado">
-            <aside class="M_dados">
-                <p id="elemento1">elemento</p>
-                <p id="vida1">vida</p>
-                <p id="dano1">dano</p>
-                <p id="energia1">energia</p>
-            </aside >
-            <div id="acoes">
-                <div onclick="atacar()">
-                    <svg id="atacar" class="botao_acao"  xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M762-96 645-212l-88 88-28-28q-23-23-23-57t23-57l169-169q23-23 57-23t57 23l28 28-88 88 116 117q12 12 12 28t-12 28l-50 50q-12 12-28 12t-28-12Zm118-628L426-270l5 4q23 23 23 57t-23 57l-28 28-88-88L198-96q-12 12-28 12t-28-12l-50-50q-12-12-12-28t12-28l116-117-88-88 28-28q23-23 57-23t57 23l4 5 454-454h160v160ZM334-583l24-23 23-24-23 24-24 23Zm-56 57L80-724v-160h160l198 198-57 56-174-174h-47v47l174 174-56 57Zm92 199 430-430v-47h-47L323-374l47 47Zm0 0-24-23-23-24 23 24 24 23Z"/></svg>
+        <div id="conteiner">
+            <section id="espaco1" class="monstro">
+                <p id="nome1" class="nome">nome</p>
+                <img id="imagem1" src="../midia/vazio.png" alt="Monstro selecionado">
+                <aside class="M_dados">
+                    <p id="elemento1">elemento</p>
+                    <p id="vida1">vida</p>
+                    <p id="dano1">dano</p>
+                    <p id="energia1">energia</p>
+                </aside >
+                <div id="acoes">
+                    <div onclick="atacar()">
+                        <svg id="atacar" class="botao_acao"  xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M762-96 645-212l-88 88-28-28q-23-23-23-57t23-57l169-169q23-23 57-23t57 23l28 28-88 88 116 117q12 12 12 28t-12 28l-50 50q-12 12-28 12t-28-12Zm118-628L426-270l5 4q23 23 23 57t-23 57l-28 28-88-88L198-96q-12 12-28 12t-28-12l-50-50q-12-12-12-28t12-28l116-117-88-88 28-28q23-23 57-23t57 23l4 5 454-454h160v160ZM334-583l24-23 23-24-23 24-24 23Zm-56 57L80-724v-160h160l198 198-57 56-174-174h-47v47l174 174-56 57Zm92 199 430-430v-47h-47L323-374l47 47Zm0 0-24-23-23-24 23 24 24 23Z"/></svg>
+                    </div>
+                    <div onclick="defender()">
+                        <svg id="defender" class="botao_acao" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M480-80q-139-35-229.5-159.5T160-516v-244l320-120 320 120v244q0 152-90.5 276.5T480-80Zm0-84q104-33 172-132t68-220v-189l-240-90-240 90v189q0 121 68 220t172 132Zm0-316Z"/></svg>
+                    </div >
+                    <div onclick="recarregar(c1)">
+                        <svg  id="recarregar" class="botao_acao" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M320-80q-17 0-28.5-11.5T280-120v-640q0-17 11.5-28.5T320-800h80v-80h160v80h80q17 0 28.5 11.5T680-760v640q0 17-11.5 28.5T640-80H320Zm40-80h240v-560H360v560Z"/></svg>
+                    </div>
                 </div>
-                <div onclick="defender()">
-                    <svg id="defender" class="botao_acao" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M480-80q-139-35-229.5-159.5T160-516v-244l320-120 320 120v244q0 152-90.5 276.5T480-80Zm0-84q104-33 172-132t68-220v-189l-240-90-240 90v189q0 121 68 220t172 132Zm0-316Z"/></svg>
-
-                </div >
-                <div onclick="recarregar(c1)">
-                    <svg  id="recarregar" class="botao_acao" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M320-80q-17 0-28.5-11.5T280-120v-640q0-17 11.5-28.5T320-800h80v-80h160v80h80q17 0 28.5 11.5T680-760v640q0 17-11.5 28.5T640-80H320Zm40-80h240v-560H360v560Z"/></svg>
-
-                </div>
-            </div>
-        </section>
-        
-
-        
-
-        <p class="vs"> VS </p>
-        <section id="espaco2" class="monstro">
-            <p id="nome2" class="nome">nome</p>
-            <img id="imagem2" src="../midia/vazio.png" alt="Monstro selecionado">
-            <aside class="M_dados">
-                <p id="elemento2">elemento</p>
-                <p id="vida2">vida</p>
-                <p id="dano2">dano</p>
-                <p id="energia2">energia</p>
-            </aside>
+            </section>
             
-        </section>
+            
+            <p class="vs"> VS </p>
+            <section id="espaco2" class="monstro">
+                <p id="nome2" class="nome">nome</p>
+                <img id="imagem2" src="../midia/vazio.png" alt="Monstro selecionado">
+                <aside class="M_dados">
+                    <p id="elemento2">elemento</p>
+                    <p id="vida2">vida</p>
+                    <p id="dano2">dano</p>
+                    <p id="energia2">energia</p>
+                </aside>
+            
+            </section>
+        </div>
 
         <audio id="musicacombate" class="musica" src="../musicas/musica (1).mp3" loop></audio>
     </main>

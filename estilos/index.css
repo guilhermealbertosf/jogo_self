@@ -46,7 +46,7 @@ section input{
     font: bolder 1.4em arial;
     color: var(--cor5);
     border-radius: 10px;
-    border-color: var(--cor5);
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.871);
     background-color:  #ebb074;
 }
 

@@ -61,11 +61,11 @@ div#voltar{
 body{
     background: var(--cor5) url(../midia/imagem_de_fundo1-350px.jpg) center no-repeat fixed;
     background-size: cover;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
 }
 
 main{
-    background-color: #f0e6d64b;
+    background-color: #f0e6d600;
 }
 
 .nome{
@@ -83,9 +83,3 @@ main{
     font-family: Verdana, Tahoma, sans-serif;
 }
 
-.vs{
-    color: rgb(134, 71, 39);
-    display: block;
-    font: bold 5em 'Courier New', Courier, monospace;
-    margin: 30px auto;
-}

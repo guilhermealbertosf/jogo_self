@@ -6,17 +6,22 @@ body{
 }
 header{
     text-align: center;
-    background-color: rgb(165, 164, 164);
-    border-radius: 12px;
+    background-color: rgb(103, 103, 103);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+
 }
 header h1{
     padding: 10px;
     margin-bottom: 50px;
+    color: white;
 }
 
 menu{
+    margin: auto;
     padding: 10px;
     background-color: rgb(213, 213, 213);
+    max-width: 600px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.488);
 }
 
 section{
@@ -32,3 +37,5 @@ section input{
 section input:active{
     background-color: lightblue;
 }
+
+
