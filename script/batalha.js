@@ -43,29 +43,36 @@ let lista_de_elementos = {natureza:`\u{1F33F}`, fogo:`\u{1F525}`, agua:`\u{1F4A7
 
 let nome = [
     '',
-    'Serpendragon',
-    'Croconot',
-    'Colossus',
-    'tclasserous'
+    'Flarion',
+    'Florapede',
+    'Khraxxos',
+    'Aguafang'
 ]
 let elemento = [
     '',
-    `${lista_de_elementos.natureza}`,
     `${lista_de_elementos.fogo}`,
-    `${lista_de_elementos.agua}`,
+    `${lista_de_elementos.natureza}`,
     `${lista_de_elementos.terra}`,
+    `${lista_de_elementos.agua}`,
+]
+let src = [
+    '',
+    '../midia/flarion.jpg',
+    '../midia/florapede.jpg',
+    "../midia/khraxxos.jpg",
+    '../midia/aguafang.jpg',
 ]
 let vida = [
     0,
-    4000,
     5000,
+    4000,
     7800,
     6000,
 ]
 let dano = [
     0,
-    1200,
     2000,
+    1200,
     1000,
     1300,
 ]  
@@ -75,13 +82,6 @@ let energia = [
     20,
     20,
     20,
-]
-let src = [
-    '',
-    '../midia/serpendragon.jpg',
-    '../midia/croconot.jpg',
-    '../midia/colossus.jpg',
-    `../midia/tclasserous.jpg`
 ]
 
 
