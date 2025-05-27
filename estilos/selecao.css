@@ -27,7 +27,7 @@ main{
 section{
     display: inline-block;
     position: relative;
-    margin: auto 100px 100px 100px;
+    margin: auto auto 100px auto ;
     background-color: white;
     width: 250px;
     height: 400px;

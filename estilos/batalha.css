@@ -11,7 +11,7 @@ header h1{
     text-align: center;
     background-color: rgb(252, 252, 252);
     color: var(--cor6);
-    font-family: cursive, verdana, arial, sans-serif;
+    font-family: verdana, arial, sans-serif;
     font-size: 3em;
     margin: 0px 0px 20px 0px;
     border: 1px solid black;
