@@ -25,7 +25,7 @@ main{
 
 
 section{
-    display: inline-block;
+    display: block;
     position: relative;
     margin: auto auto 100px auto ;
     background-color: white;
@@ -63,4 +63,24 @@ section img{
     margin: auto;
     padding: 5px;
     font: bold 1.5em arial;
+}
+
+
+@media screen and (min-width: 600px) {
+    section{
+        display: inline-block;
+        margin: 50px 15px;
+        width: 250px;
+        height: 350px;
+    }
+
+    .setaright{
+        right: -10px;
+    }
+    .setaleft{
+        left: -10px;
+    }
+    #botao_selecionar{
+        margin-top: 50px;
+    }
 }
