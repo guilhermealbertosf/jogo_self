@@ -90,8 +90,27 @@ div#acoes .botao_acao{
     font: bold 5em 'Courier New', Courier, monospace;
 }
 
+/*@media screen and (min-width: 200px) and (max-width: 700px){
 
+    section{
+        display: inline-block;
+        margin: 0px 55px 55px 50px;
+        width: 225px;
+        height: 325px;
+    }
 
+    .vs{
+        display: inline-block;
+        position: absolute;
+        top: 30%;
+        right: 43.5%;
+        color: #e8004a;
+        margin: 20px auto;
+        text-shadow: 5px 1px 5px black;
+        font: bold 5em 'Courier New', Courier, monospace;
+    }
+}
+*/
 @media screen and (min-width: 700px) and (max-width: 1000px){
 
     section{
